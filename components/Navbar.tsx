@@ -34,9 +34,9 @@ const Navbar = () => {
 				</Link>
 
 				<div className="nav-icons flex items-center gap-5">
-					{navIcons.map((icon, index) => (
+					{navIcons.map((icon) => (
 						<Image
-							key={index}
+							key={icon.alt}
 							src={icon.src}
 							alt={icon.alt}
 							width={27}
