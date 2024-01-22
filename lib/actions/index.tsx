@@ -56,8 +56,8 @@ export async function scrapeAndStoreProduct(productUrl: string) {
 }
 
 
-//fetch tyhe product by id
-export async function fetchProductById(productId: string) {
+//get the product by id
+export async function getProductById(productId: string) {
 	try {
 		connectToDatabase();
 
@@ -66,6 +66,22 @@ export async function fetchProductById(productId: string) {
 		if(!product) return null;
 
 		return product;
+		
+	} catch (error) {
+		console.log(error)
+	}
+}
+
+//get all products
+export async function getAllProducts() {
+	try {
+		connectToDatabase();
+
+		const products = await Product.find({});
+
+		if(!products) return null;
+
+		return products;
 		
 	} catch (error) {
 		console.log(error)
