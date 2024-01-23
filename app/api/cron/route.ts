@@ -7,7 +7,7 @@ import { NextResponse } from "next/server"
 
 //================file conventions/route segment configuration
 export const maxDuration = 300; // 5 minutes
-export const dynamic = true;
+export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
 //================
