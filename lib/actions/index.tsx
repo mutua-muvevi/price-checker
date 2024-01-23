@@ -6,6 +6,7 @@ import { connectToDatabase } from "../mongoose";
 import { scrapeAmazonProduct } from "../scrapper";
 import { getAveragePrice, getHighestPrice, getLowestPrice } from "../utils";
 import { generateEmailBody, sendEmail } from "../nodemailer";
+import { User } from "@/types";
 
 //use server enables us to use server side functions
 
@@ -126,6 +127,6 @@ export async function getSimilarProducts(productId: string) {
 		await sendEmail(emailContent, [userEmail]);
 	  }
 	} catch (error) {
-	  console.log(error);
+	  console.log("Catch error", error);
 	}
   }
