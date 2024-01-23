@@ -5,6 +5,13 @@ import { scrapeAmazonProduct } from "@/lib/scrapper"
 import { getAveragePrice, getEmailNotifType, getHighestPrice, getLowestPrice } from "@/lib/utils"
 import { NextResponse } from "next/server"
 
+//================file conventions/route segment configuration
+export const maxDuration = 300; // 5 minutes
+export const dynamic = true;
+export const revalidate = 0;
+
+//================
+
 export async function GET () {
 	try {
 		connectToDatabase()
@@ -40,7 +47,7 @@ export async function GET () {
 		
 				//create or update product
 				const updatedProduct = await Product.findOneAndUpdate(
-					{ url: scrappedProduct.url },
+					{ url: product.url },
 					product,
 				);
 
