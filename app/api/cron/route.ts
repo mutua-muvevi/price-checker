@@ -6,7 +6,7 @@ import { getAveragePrice, getEmailNotifType, getHighestPrice, getLowestPrice } f
 import { NextResponse } from "next/server"
 
 //================file conventions/route segment configuration
-export const maxDuration = 300; // 5 minutes
+export const maxDuration = 10; //this is for the hobby plan in vercel pro is 15 seconds and extreprise it 900seconds
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
